@@ -39,7 +39,13 @@ class PostsModel {
 
     public function getPostById(int $id): Post
     {
-        $query = $this->db->prepare('SELECT `id`, `title`, `image` FROM `posts` WHERE `id` = :id');
+        $query = $this->db->prepare('
+            SELECT `posts`.`id`, `posts`.`title`, `posts`.`image`, `categories`.`name` AS `category` 
+                FROM `posts` 
+                LEFT JOIN `categories`
+                    ON `posts`.`category_id` = `categories`.`id`
+                WHERE `posts`.`id` = :id
+        ');
         // Tells PDO to put the data into the Post entity class, rather than an assoc array
         $query->setFetchMode(PDO::FETCH_CLASS, Post::class);
         $query->execute(['id' => $id]);

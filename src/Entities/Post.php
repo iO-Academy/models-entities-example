@@ -30,6 +30,8 @@ class Post {
     private int $id;
     private string $title;
     private string $image;
+    private string $category;
+
 
     // We don't need a constructor here because we're using PDO fetch_class
     // fetch_class does not want your class to have a constructor - it uses magic to inject the data
@@ -48,5 +50,10 @@ class Post {
     public function getImage(): string
     {
         return $this->image;
+    }
+
+    public function getCategory(): string
+    {
+        return $this->category;
     }
 }

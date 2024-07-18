@@ -25,6 +25,9 @@ $postsModel->createPost('Testing models again', 'Does this work?', 'dog.jpg');
 $posts = $postsModel->getAllPosts(); // Get all posts
 $post = $postsModel->getPostById(1); // Get a single post
 
+echo '<pre>';
+var_dump($post);
+
 // Post.php
 // The job of an entity is to represent a single row from a database table
 // Our model returns the data in our entities
