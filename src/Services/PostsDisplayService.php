@@ -1,5 +1,7 @@
 <?php
 
+require_once 'src/Entities/Post.php';
+
 // Service pattern
 
 // They are generic classes that perform logic or do a process for you
