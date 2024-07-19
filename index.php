@@ -6,7 +6,6 @@ require_once 'src/Models/PostsModel.php';
 require_once 'src/Services/PostsDisplayService.php';
 
 
-
 $db = DatabaseConnector::connect();
 
 $postsModel = new PostsModel($db);
